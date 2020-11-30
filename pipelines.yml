@@ -10,9 +10,9 @@ resources:
   - name: dbp_image
     type: Image
     configuration:
-      registry: art                                # <-- replace with your artifactory integration
-      sourceRepository: docker_local               # <-- required if registry is Artifactory
-      imageName: kaloula.jfrog-pipelines.com/docker-local/dbp  # < -- replace with your image path and name
+      registry: alonyartifactory                               # <-- replace with your artifactory integration
+      sourceRepository: webapp-prod-repo               # <-- required if registry is Artifactory
+      imageName: alony.jfrog.io/artifactory/webapp-prod-repo/webappimage  # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
       
