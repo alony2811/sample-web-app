@@ -16,11 +16,11 @@ resources:
       imageTag: latest
       autoPull: true
       
-  - name: dbp_build_info
+  - name: webapp_build_info
     type: BuildInfo
     configuration:
       sourceArtifactory: alonyartifactory
-      buildName: dbp_build
+      buildName: webapp_build
       buildNumber: 1   
       
 #   - name: dbp_scanned_build_info
@@ -32,7 +32,7 @@ resources:
 
       
 pipelines:
-  - name: pipeline_dbp
+  - name: pipeline
     steps:
       - name: docker_build
         type: DockerBuild
@@ -61,13 +61,13 @@ pipelines:
           outputResources:
             - name: art_image
       
-      - name: publish_dbp_build
+      - name: publish_webapp_build
         type: PublishBuildInfo
         configuration:
           inputSteps:
             - name: docker_push
           outputResources:
-            - name: dbp_build_info
+            - name: webapp_build_info
       
 
        
