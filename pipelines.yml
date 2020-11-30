@@ -54,6 +54,7 @@ pipelines:
           targetRepository: webapp-prod-repo
           forceXrayScan: true
           failOnScan: false
+          autoPublishBuildInfo: true
           integrations:
             - name: alonyartifactory                           # <-- replace with your artifactory integration
           inputSteps:
@@ -61,13 +62,13 @@ pipelines:
           outputResources:
             - name: art_image
       
-      - name: publish_webapp_build
-        type: PublishBuildInfo
-        configuration:
-          inputSteps:
-            - name: docker_push
-          outputResources:
-            - name: webapp_build_info
+#       - name: publish_webapp_build
+#         type: PublishBuildInfo
+#         configuration:
+#           inputSteps:
+#             - name: docker_push
+#           outputResources:
+#             - name: webapp_build_info
       
 
        
