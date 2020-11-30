@@ -2,10 +2,10 @@ resources:
   - name: dbp_repo
     type: GitRepo
     configuration:
-      gitProvider: my_github                       # <-- replace with your integration
-      path: jfrog/jfrog-pipelines-docker-sample    # <-- replace with your repository name
+      gitProvider: GitHub                       # <-- replace with your integration
+      path: alony2811/sample-web-app   # <-- replace with your repository name
       branches:
-        include: master
+        include: main
 
   - name: dbp_image
     type: Image
