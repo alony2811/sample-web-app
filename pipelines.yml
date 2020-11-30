@@ -61,6 +61,8 @@ pipelines:
             - name: docker_build
           outputResources:
             - name: art_image
+            - name: webapp_build_info
+            
       
 #       - name: publish_webapp_build
 #         type: PublishBuildInfo
