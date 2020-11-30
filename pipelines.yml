@@ -12,7 +12,7 @@ resources:
     configuration:
       registry: alonyartifactory                               # <-- replace with your artifactory integration
       sourceRepository: webapp-prod-repo               # <-- required if registry is Artifactory
-      imageName: alony.jfrog.io/artifactory/webapp-prod-repo/webappimage  # < -- replace with your image path and name
+      imageName: alony.jfrog.io/webapp-prod-repo/webappimage  # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
       
@@ -40,7 +40,7 @@ pipelines:
           affinityGroup: dbp_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: alony.jfrog.io/artifactory/webapp-prod-repo/webappimage   # replace with your image path and name
+          dockerImageName: alony.jfrog.io/webapp-prod-repo/webappimage  # replace with your image path and name
           dockerImageTag: ${run_number}
           inputResources:
             - name: dbp_repo
