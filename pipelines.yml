@@ -74,7 +74,7 @@ pipelines:
           #inherits from bash
           failOnScan:        true                      # default true
           inputResources:
-            - name:         dbp_scanned_build_info           # required
+            - name:         dbp_build_info           # required
               trigger: false
           outputResources:
             - name:         dbp_scanned_build_info            # optional
