@@ -21,7 +21,14 @@ resources:
     configuration:
       sourceArtifactory: alonyartifactory
       buildName: dbp_build
-      buildNumber: 1    
+      buildNumber: 1   
+      
+  - name: dbp_scanned_build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: alonyartifactory
+      buildName: dbp_build
+      buildNumber: 1
 
       
 pipelines:
@@ -58,10 +65,10 @@ pipelines:
           #inherits from bash
           failOnScan:        true                      # default true
           inputResources:
-            - name:         dbp_build_info           # required
+            - name:         dbp_scanned_build_info           # required
               trigger: false
           outputResources:
-            - name:         dbp_build_info            # optional
+            - name:         dbp_scanned_build_info            # optional
  
         execution:
           onStart:
