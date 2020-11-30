@@ -59,6 +59,15 @@ pipelines:
           outputResources:
             - name: dbp_image
       
+      
+      - name: publish_dbp_build
+        type: PublishBuildInfo
+        configuration:
+          inputSteps:
+            - name: docker_push
+          outputResources:
+            - name: dbp_build_info
+      
       - name: scan
         type: XrayScan
         configuration:
@@ -81,13 +90,7 @@ pipelines:
           onComplete: #always
             - echo "Cleaning up some stuff"
        
-      - name: publish_dbp_build
-        type: PublishBuildInfo
-        configuration:
-          inputSteps:
-            - name: docker_push
-          outputResources:
-            - name: dbp_build_info
+
       
       
 
