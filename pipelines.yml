@@ -78,7 +78,6 @@ pipelines:
               trigger: false
           outputResources:
             - name:         dbp_scanned_build_info            # optional
- 
         execution:
           onStart:
             - echo "Preparing for work..."
