@@ -12,7 +12,7 @@ resources:
     configuration:
       registry: alonyartifactory                               # <-- replace with your artifactory integration
       sourceRepository: webapp-prod-repo               # <-- required if registry is Artifactory
-      imageName: alony.jfrog.io/webapp-prod-repo/webapp-prod-repo  # < -- replace with your image path and name
+      imageName: alony.jfrog.io/artifactory/webapp-prod-repo/webapp-prod-repo  # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
       
