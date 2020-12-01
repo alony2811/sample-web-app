@@ -46,7 +46,7 @@ pipelines:
           affinityGroup: dbp_group
           targetRepository: webapp-prod-repo
           forceXrayScan: true
-          failOnScan: true
+          failOnScan: false
           autoPublishBuildInfo: true
           integrations:
             - name: alonyartifactory                           # <-- replace with your artifactory integration
