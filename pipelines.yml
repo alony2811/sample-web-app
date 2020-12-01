@@ -58,7 +58,8 @@ pipelines:
             
       - name: deployment
         type: Bash
-        inputSteps:
+        configuration:
+          inputSteps:
             - name: docker_push
         execution:
           onStart:
