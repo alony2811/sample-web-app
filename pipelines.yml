@@ -69,10 +69,10 @@ pipelines:
             - tar -zxf google-cloud-sdk-*
             - cd google-cloud-sdk
             - CLOUDSDK_CORE_DISABLE_PROMPTS=1 ./install.sh
-            - gcloud init
-            - gcloud components update
-            - gcloud components install kubectl
-            - kubectl version --client
+            - gcloud init --console-only
+#             - gcloud components update
+#             - gcloud components install kubectl
+#             - kubectl version --client
             
 
       
