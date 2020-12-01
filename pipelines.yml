@@ -22,14 +22,7 @@ resources:
       sourceArtifactory: alonyartifactory
       buildName: webapp_build
       buildNumber: 1   
-      
-#   - name: dbp_scanned_build_info
-#     type: BuildInfo
-#     configuration:
-#       sourceArtifactory: alonyartifactory
-#       buildName: dbp_build
-#       buildNumber: 1
-
+     
       
 pipelines:
   - name: master_pipeline
@@ -53,7 +46,7 @@ pipelines:
           affinityGroup: dbp_group
           targetRepository: webapp-prod-repo
           forceXrayScan: true
-          failOnScan: false
+          failOnScan: true
           autoPublishBuildInfo: true
           integrations:
             - name: alonyartifactory                           # <-- replace with your artifactory integration
@@ -63,14 +56,7 @@ pipelines:
             - name: art_image
             - name: webapp_build_info
             
-      
-#       - name: publish_webapp_build
-#         type: PublishBuildInfo
-#         configuration:
-#           inputSteps:
-#             - name: docker_push
-#           outputResources:
-#             - name: webapp_build_info
+
       
 
        
