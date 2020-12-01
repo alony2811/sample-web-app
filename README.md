@@ -1,2 +1,2 @@
 # sample-web-app
-Sample Web application
+Sample Web application for production engineer assignment
