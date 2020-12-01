@@ -65,10 +65,14 @@ pipelines:
           onStart:
             - echo "Preparing for work..."
           onExecute:
-            - wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-265.0.0-linux-x86_64.tar.gz
+            - wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
             - tar -zxf google-cloud-sdk-*
             - cd google-cloud-sdk
             - CLOUDSDK_CORE_DISABLE_PROMPTS=1 ./install.sh
+            - gcloud init
+            - gcloud components update
+            - gcloud components install kubectl
+            - kubectl version --client
             
 
       
