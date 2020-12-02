@@ -67,9 +67,7 @@ pipelines:
           onStart:
             - echo "Preparing for work..."
           onExecute:
-            - echo ${int_gcp_prod_jsonKey} > gcp_key.json
             - gcloud container clusters get-credentials k8s-cluster --zone=us-central1-c
-          #  - kubectl config view
             - kubectl --namespace=k8s-cluster-prod set image deployment/webapp-deployment webapp=alony.jfrog.io/webapp-prod-repo/webappimage/builds:${run_number} --record
             
             
