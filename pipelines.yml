@@ -68,9 +68,9 @@ pipelines:
             - echo "Preparing for work..."
           onExecute:
             - echo ${int_gcp_prod_jsonKey} > gcp_key.json
-            # - gcloud auth activate-service-account 115053670936-compute@developer.gserviceaccount.com --key-file=gcp_key.json --project=golden-hook-296709
             - gcloud container clusters get-credentials k8s-cluster --zone=us-central1-c
-            - kubectl config view
+          #  - kubectl config view
+            - kubectl --namespace=k8s-cluster-prod get pods
             
             
             
