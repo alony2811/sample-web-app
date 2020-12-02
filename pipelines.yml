@@ -69,7 +69,9 @@ pipelines:
           onExecute:
             - echo ${int_gcp_prod_jsonKey} > gcp_key.json
             # - gcloud auth activate-service-account 115053670936-compute@developer.gserviceaccount.com --key-file=gcp_key.json --project=golden-hook-296709
-            - gcloud container node-pools list --region=us-central1-c --cluster=k8s-cluster
+            - gcloud container clusters get-credentials cluster-name=k8s-cluster --region=us-central1-c
+            - kubectl config view
+            
             
             
 
