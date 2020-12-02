@@ -47,7 +47,7 @@ pipelines:
           targetRepository: webapp-prod-repo
           forceXrayScan: true
           failOnScan: false                                     # <--- should be "true" if we want to failed the build once the scan found violations
-          autoPublishBuildInfo: true
+          autoPublishBuildInfo: true 
           integrations:
             - name: alonyartifactory                           # <-- replace with your artifactory integration
           inputSteps:
@@ -65,14 +65,10 @@ pipelines:
           onStart:
             - echo "Preparing for work..."
           onExecute:
-            - wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
-            - tar -zxf google-cloud-sdk-*
-            - cd google-cloud-sdk
-            - CLOUDSDK_CORE_DISABLE_PROMPTS=1 ./install.sh
-            - gcloud init --console-only
-#             - gcloud components update
-#             - gcloud components install kubectl
-#             - kubectl version --client
+            - kubectl version --client
+            - gcloud version
+            
+
             
 
       
