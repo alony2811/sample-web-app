@@ -69,8 +69,9 @@ pipelines:
           onExecute:
             - kubectl version --client
             - gcloud version
-            - echo ${int_gcp_prod_jsonKey}
-            - gcloud auth activate-service-account 115053670936-compute@developer.gserviceaccount.com --key-file=${int_gcp_prod_jsonKey} --project=golden-hook-296709
+            - echo ${int_gcp_prod_jsonKey} > gcp_key.json
+            - ls
+            - gcloud auth activate-service-account 115053670936-compute@developer.gserviceaccount.com --key-file=gcp_key.json --project=golden-hook-296709
             
 
             
