@@ -61,12 +61,16 @@ pipelines:
         configuration:
           inputSteps:
             - name: docker_push
+          integrations:
+            - name: gcp_prod
         execution:
           onStart:
             - echo "Preparing for work..."
           onExecute:
             - kubectl version --client
             - gcloud version
+            - echo ${int_gcp_prod_jsonKey}
+            - gcloud auth activate-service-account 115053670936-compute@developer.gserviceaccount.com --key-file=${int_gcp_prod_jsonKey} --project=golden-hook-296709
             
 
             
