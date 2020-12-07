@@ -5,7 +5,7 @@ resources:
       gitProvider: GitHub                       # <-- replace with your integration
       path: alony2811/sample-web-app   # <-- replace with your repository name
       branches:
-        include: main
+        include: ${res_git_repo_branchName}
 
   - name: art_image
     type: Image
